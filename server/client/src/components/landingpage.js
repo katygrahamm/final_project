@@ -20,6 +20,7 @@ class LandingPage extends Component {
 
 handleSubmit(name) {
   console.log(this.state.name)
+  localStorage.removeItem('userid')
 
    let userid = Math.random().toString(36).substring(7);
       console.log("random", userid);

@@ -1,0 +1,13 @@
+export const FETCH_RECOMMENDATIONS = 'fetchPlantRecommendations';
+export const FETCH_PLANTS = 'fetchPlants';
+export const ADD_COLLECTION = 'addCollection';
+export const FETCH_PLANTDETAIL = 'fetchPlantDetail'
+export const ADD_USER = 'addUser'
+export const ADD_SPACE = 'createSpace'
+export const ADD_PLANTTOSPACE = 'addPlantToSpace'
+export const FETCH_SPACES = 'fetchSpaces'
+export const ADD_EVENT = 'createEvent'
+export const FETCH_EVENTS = 'fetchEvents'
+export const REMOVE_PLANT = 'removePlant'
+export const ADD_WISHLIST = 'addWishlist'
+export const FETCH_WISHLIST = 'fetchWishlist'

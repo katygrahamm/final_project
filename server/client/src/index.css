@@ -1,0 +1,269 @@
+
+
+.plant-recommendations {
+    margin-left: 20px;
+}
+
+.title-plant-recomm {
+    color: #696969;
+}
+
+.common-name-recomm {
+    font-style: bold;
+    color: #696969;
+}
+
+.botanical-name-recomm{
+   font-style: italic;
+   color: #696969;
+}
+
+.plant-img-recomm {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.plant-library-container {
+    float: left;
+    padding: 30px;
+    align-items: center;
+}
+
+.common-name-library {
+    overflow-wrap: normal;
+}
+
+.plant-image-library {
+    align-items: center;
+}
+
+.name-space {
+    font-style: bold;
+    color: #696969;
+    padding-top: 12px;
+    padding-left: 8px;
+}
+
+.title-space {
+    padding-left: 24px;
+    padding-right: 25px;
+    color: #696969;
+    margin-bottom: 10px;
+}
+
+.botanical-name-space{
+    color: #696969;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-style: italic;
+}
+
+.common-name-space{
+    color: #696969;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.plant-image-space {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button-add-to-space {
+   margin-bottom: 20px;
+}
+
+.plant-space-container {
+    padding-left:20px;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+.plant-image-collection {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.plant-detail-care {
+    float:right;
+    overflow-wrap: normal;
+    word-wrap: break-word;
+}
+
+.plant-image-detail {
+    float: left;
+}
+
+.common-name-detail {
+    color: #696969;
+}
+
+.botanical-name-detail {
+    color: #696969;
+    font-style: italic;
+}
+
+.plant-detail-title {
+    color: #696969;
+}
+
+.plant-detail-info {
+    color: #696969;
+}
+
+.icon-detail {
+    margin-top: 7px;
+    padding: 10px;
+    color: #696969;
+}
+
+.icon-detail-row {
+    display: flex;
+    align-items: center;
+}
+
+.row-water {
+    display: flex;
+    align-items: center;
+}
+
+.recomm-label {
+    margin-top: 40px;
+    margin-right: 10px;
+    color: #696969;
+    font-size:20px;
+}
+
+.create-space-title {
+    color: #696969;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.recomm-label-water {
+    margin-top: 40px;
+    font-size: 20px;
+    margin-right: 70px;
+    color: #696969;
+}
+
+.recomm-label-light {
+    margin-top: 40px;
+    margin-right: 82px;
+    color: #696969;  
+    font-size:20px;
+}
+
+.recomm-label-size {
+    margin-top: 40px;
+    margin-right: 25px;
+    color: #696969;  
+    font-size:20px;
+}
+
+.recomm-label-pet {
+    margin-top: 40px;
+    margin-right: 18px;
+    color: #696969;  
+    font-size:20px;
+}  
+
+.recomm-label-kid {
+    margin-top: 40px;
+    margin-right: 18px;
+    color: #696969;  
+    font-size:20px;
+}
+
+#filled-basic {
+    margin-left: 150px;
+}
+
+.copyright {
+    margin-top: 280px;
+    
+}
+
+.paper-myspaces{
+    padding: 20px;
+  margin-bottom: 40px;
+}
+
+.landing-slogan {
+    color: #696969;  
+    margin-top: 20px;
+}
+
+.landing-input {
+   width: 55%;
+  align-items: center;
+}
+
+.tell-us {
+    color: #696969; 
+    margin-bottom: 5px;
+}
+
+.watering-schedule {
+    color: #696969;  
+    margin-left: 10px;
+}
+
+.card {
+    border: none !important;
+}
+
+.recomm-item {
+    display: inline-block;
+}
+
+.recomm-plant-card {
+    float: left;
+}
+
+.plant-collection-card {
+    float: left;
+}
+
+.view-collection{
+    float: right;
+}
+.view-collection-btn {
+    display: inline-block;
+}
+
+.plant-card {
+        float: left;
+        padding: 30px;
+        align-items: center;
+
+}
+
+.col {
+    float:left
+}
+.recommendations {
+    display: inline-block;
+}
+
+.view-collection-btn {
+   margin-left: 30px;
+}
+
+.space-name {
+   color: #696969;
+   margin-left: 20px;
+}
+
+.view-btn-link {
+    float: right;
+}
+
+.common-name {
+    margin-top: 10px;
+}
+
+.plant-image-wishlist{
+    margin-bottom: 20px;
+}

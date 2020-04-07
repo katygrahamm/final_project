@@ -174,7 +174,7 @@ render() {
       </div>
       <br></br>
       <div className="row">
-       <Button type="Submit" className="save-space-btn">Save Space</Button>
+       <Button type="Submit" variant="outline-secondary" className="save-space-btn">Save Space</Button>
        </div>
       </form>
     </Grid>

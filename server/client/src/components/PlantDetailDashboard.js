@@ -143,7 +143,7 @@ export default function PlantDetailDashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" id="title" noWrap className={classes.title}>
-  
+            Plant Lab
           </Typography>
           <Link href="/" color="inherit">Sign Out</Link>
         </Toolbar>

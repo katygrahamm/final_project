@@ -43,6 +43,11 @@ componentDidMount() {
     sessionStorage.setItem('plant', plantId)
   }
 
+  handleAddWishlist(plantid) {
+    let userid = localStorage.getItem('userid')
+    this.props.addWishlist(plantid, userid)
+  }
+
  handleRemove () {
 
  }
@@ -72,9 +77,7 @@ componentDidMount() {
         </div>
       </div>
     )
-  
-  } else {
-    console.log(this.props.spaces)
+    } else {
     return (
       <div>
       <div className="row new-space-2">
@@ -98,7 +101,7 @@ componentDidMount() {
             <hr />
                       
             <div>
-            <h4 className="title-space">Plant Recommendations </h4>
+            <h4 className="title-space">Our Recommendations </h4>
             </div>
             <div className="row"> 
               {
@@ -121,7 +124,7 @@ componentDidMount() {
               </div>
 
             <div>
-            <h4 className="title-space">You currently have these plants in the {space.name} </h4>
+            <h4 className="title-space"> {space.name} Plant Collection</h4>
             </div>
             <div className="row">
               {

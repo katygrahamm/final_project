@@ -28,7 +28,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center" visible="hidden">
       {'Copyright  © '}
       <Link color="#3C7D39" href="https://material-ui.com/">
-        PLANTA
+        Plant Lab
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -144,6 +144,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" id="title" noWrap className={classes.title}>
+            Plant Lab
           </Typography>
           <Link href="/" color="inherit">Sign Out</Link>
         </Toolbar>

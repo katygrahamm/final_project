@@ -38,7 +38,7 @@ componentDidMount() {
 
  render() {
     console.log(this.props.plant)
-    if (this.props.plant == undefined) {
+    if (this.props.plant.length == 0) {
      return (
        <div>Loading ... </div>
      )

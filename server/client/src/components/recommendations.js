@@ -37,18 +37,52 @@ class Recommendations extends Component {
       difficulty: '', 
       room_size: '',
       room_height: '',
+      clickedWater1: '',
+      clickedWater2: '',
+      clickedLight1: '',
+      clickedLight2: '',
+      clickedLight3: '',
+      clickedChild: '',
+      clickedPet: '',
+      clickedRoom1: '',
+      clickedRoom2: '',
+      clickedRoom3: '',
+      clickedSpace1: '',
+      clickedSpace2: '',
+      clickedSpace3: '',
+      clickedHeight1: '',
+      clickedHeight2: '',
+      clickedHeight3: '',
+      clickedDifficulty1: '',
+      clickedDifficulty2: '',
+      clickedDifficulty3: '',
     }
   }
 
-  handleSubmit(event) {
-    event.preventDefault()
+  handleSubmit() {
     let userId = localStorage.getItem('userid')
     console.log(this.state)
     this.props.createSpace(userId, this.state.name, this.state.water, this.state.light, this.state.pet_friendly, this.state.kid_friendly, this.state.difficulty,
         this.state.room_size, this.state.room_height)
   }
 
+  handlePet() {
+    if (this.state.clickedPet == 'clickedPet') {
+    this.setState({clickedPet: ''})
+  } else if (this.state.clickedPet == '') {
+    this.setState({clickedPet: 'clickedPet'})
+    this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" })
+  }
+}
 
+handleChild() {
+  if (this.state.clickedChild == 'clickedChild') {
+  this.setState({ clickedChild: '' })
+  } else if (this.state.clickedChild == '') {
+  this.setState({ clickedChild: 'clickedChild'})
+  this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" })
+  }
+}
 
   handleAdd(plant){
     console.log(plant)
@@ -67,17 +101,17 @@ render() {
     container
     justify="center"
     >
-      <form onSubmit={ event => {this.handleSubmit(event)}}>
+      <div>
         <div className="row">
         <p className="recomm-label-water">Water</p>
         <Tooltip title="Low-Water">
           <IconButton aria-label="low-water">
-            <InvertColorsOffIcon style={{ fontSize: 60 }} className="water" onClick={event=> this.setState({ water: "Minimal" })}/>
-          </IconButton>
+            <InvertColorsOffIcon style={{ fontSize: 60 }} className={this.state.clickedWater1} onClick={event=> {this.setState({ water: "Minimal" }); this.setState({ clickedWater1: 'clickedWater1'}); this.setState({ clickedWater2: ''})}}/>
+          </IconButton>                                                                   
         </Tooltip>
         <Tooltip title="Regular-Water">
           <IconButton aria-label="low-water">
-            <InvertColorsIcon style={{ fontSize: 60 }}  className="water" onClick={event=> this.setState({ water: "Regular" })}/>
+            <InvertColorsIcon style={{ fontSize: 60 }}  className={this.state.clickedWater2} onClick={event=> {this.setState({ water: "Regular" }); this.setState({ clickedWater2: 'clickedWater2'}); this.setState({ clickedWater1: ''})}}/>
           </IconButton>
         </Tooltip>
         </div>
@@ -85,17 +119,17 @@ render() {
        <p className="recomm-label-light">Light</p>
         <Tooltip title="Low-Light">
           <IconButton aria-label="low-light">
-            <BrightnessLowIcon style={{ fontSize: 60 }} className="light" onClick={event=> this.setState({ light: "Low" })}/>
+            <BrightnessLowIcon style={{ fontSize: 60 }} className={this.state.clickedLight1} onClick={event=> {this.setState({ light: "Low" }); this.setState({ clickedLight1: 'clickedLight1'}); this.setState({clickedLight2: ''}); this.setState({clickedLight3: '' })}}/>
           </IconButton>
         </Tooltip>
         <Tooltip title="Medium-Light">
           <IconButton aria-label="med-light">
-            <BrightnessMediumIcon style={{ fontSize: 60 }} className="light" onClick={event=> this.setState({ light: "Medium" })}/>
+            <BrightnessMediumIcon style={{ fontSize: 60 }} className={this.state.clickedLight2} onClick={event=> {this.setState({ light: "Medium" }); this.setState({ clickedLight2: 'clickedLight2'}); this.setState({clickedLight1: ''}); this.setState({clickedLight3: '' })}}/>
           </IconButton>
         </Tooltip>
         <Tooltip title="Bright-Light">
           <IconButton aria-label="bright-light">
-            <Brightness7Icon style={{ fontSize: 60 }} className="light" onClick={event=> this.setState({ light: "Bright" })}/>
+            <Brightness7Icon style={{ fontSize: 60 }} className={this.state.clickedLight3} onClick={event=> {this.setState({ light: "Bright" }); this.setState({ clickedLight3: 'clickedLight3'}); this.setState({clickedLight1: ''}); this.setState({clickedLight2: '' })}}/>
           </IconButton>
         </Tooltip>
       </div>
@@ -103,7 +137,7 @@ render() {
       <p className="recomm-label-kid">Kid-Friendly</p>
         <Tooltip title="Kid-Friendly">
           <IconButton aria-label="kid-friendly">
-            <ChildFriendlyIcon style={{ fontSize: 60 }} className="child" onClick={event=> this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" })}/>
+            <ChildFriendlyIcon style={{ fontSize: 60 }} className={this.state.clickedChild} onClick={event=> {this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" }); this.handleChild()}}/>
           </IconButton>
         </Tooltip>
         </div>
@@ -111,7 +145,7 @@ render() {
         <p className="recomm-label-pet">Pet-Friendly</p>
         <Tooltip title="Pet-Friendly">
           <IconButton aria-label="Pet-friendly">
-            <PetsIcon style={{ fontSize: 60 }} className="pet" onClick={event=> this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" })}/>
+            <PetsIcon style={{ fontSize: 60 }} className={this.state.clickedPet} onClick={event=> {this.setState({ kid_friendly: "Yes", pet_friendly: "Yes" }); this.handlePet()}}/>
           </IconButton>
         </Tooltip>
       </div>
@@ -119,17 +153,17 @@ render() {
       <p className="recomm-label-size">Space-Size </p>
         <Tooltip title="Small-Room">
           <IconButton aria-label="Small-Room">
-            <Crop75Icon style={{ fontSize: 60 }} className="room" onClick={event=> this.setState({ room_size: "Small" })}/>
+            <Crop75Icon style={{ fontSize: 60 }} className={this.state.clickedRoom1} onClick={event=> {this.setState({ room_size: "Small" }); this.setState({ clickedRoom1: 'clickedRoom1'}); this.setState({clickedRoom2: ''}); this.setState({clickedRoom3: ''})}}/>
           </IconButton>
         </Tooltip>
         <Tooltip title="Medium-Room">
           <IconButton aria-label="Medium-Room">
-            <Crop54Icon style={{ fontSize: 60 }} className="room" onClick={event=> this.setState({ room_size: "Medium" })}/>
+            <Crop54Icon style={{ fontSize: 60 }} className={this.state.clickedRoom2} onClick={event=> {this.setState({ room_size: "Medium" }); this.setState({ clickedRoom2: 'clickedRoom2'}); this.setState({clickedRoom1: ''}); this.setState({clickedRoom3: ''})}}/>
           </IconButton>
         </Tooltip>
         <Tooltip title="Large-Room">
           <IconButton aria-label="Large-Room">
-            <Crop32Icon style={{ fontSize: 60 }} className="room" onClick={event=> this.setState({ room_size: "Large" })}/>
+            <Crop32Icon style={{ fontSize: 60 }} className={this.state.clickedRoom3} onClick={event=> {this.setState({ room_size: "Large" }); this.setState({ clickedRoom3: 'clickedRoom3'}); this.setState({clickedRoom1: ''}); this.setState({clickedRoom2: ''})}}/>
           </IconButton>
         </Tooltip>
       </div>
@@ -137,17 +171,17 @@ render() {
       <p className="recomm-label">Space-Height</p>
       <Tooltip title="Low-Ceiling">
         <IconButton aria-label="Difficulty-Expert">
-          <HomeIcon style={{ fontSize: 60 }} className="height" onClick={event=> this.setState({ room_height: 8 })}/>
+          <HomeIcon style={{ fontSize: 60 }} className={this.state.clickedHeight1} onClick={event=> {this.setState({ room_height: 8 }); this.setState({ clickedHeight1: 'clickedHeight1'}); this.setState({clickedHeight2: ''}); this.setState({clickedHeight3: ''})}}/>
         </IconButton>
       </Tooltip>
       <Tooltip title="Average-Ceiling">
         <IconButton aria-label="Difficulty-Expert">
-          <HomeWorkIcon style={{ fontSize: 60 }} className="height" onClick={event=> this.setState({ room_height: 10 })}/>
+          <HomeWorkIcon style={{ fontSize: 60 }} className={this.state.clickedHeight2} onClick={event=> {this.setState({ room_height: 10 }); this.setState({ clickedHeight2: 'clickedHeight2'}); this.setState({clickedHeight1: ''}); this.setState({clickedHeight3: ''})}}/>
         </IconButton>
       </Tooltip>
       <Tooltip title="High-Ceiling">
         <IconButton aria-label="Difficulty-Expert">
-          <LocationCityIcon style={{ fontSize: 60 }} className="height" onClick={event=> this.setState({ room_height: 20 })}/>
+          <LocationCityIcon style={{ fontSize: 60 }} className={this.state.clickedHeight3} onClick={event=> {this.setState({ room_height: 20 }); this.setState({ clickedHeight3: 'clickedHeight3'}); this.setState({clickedHeight1: ''}); this.setState({clickedHeight2: ''})}}/>
         </IconButton>
       </Tooltip>
       </div>
@@ -155,17 +189,17 @@ render() {
       <p className="recomm-label">Difficulty-Level</p>
       <Tooltip title="Difficulty-Easy">
         <IconButton aria-label="Difficulty-Easy">
-          <DoneIcon style={{ fontSize: 60 }}  className="difficulty" onClick={event=> this.setState({ difficulty: "Easy" })}/>
+          <DoneIcon style={{ fontSize: 60 }}  className={this.state.clickedDifficulty1} onClick={event=> {this.setState({ difficulty: "Easy" }); this.setState({ clickedDifficulty1: 'clickedDifficulty1'}); this.setState({clickedDifficulty2: ''}); this.setState({clickedDifficulty3: ''})}}/>
         </IconButton>
       </Tooltip>
       <Tooltip title="Difficulty-Moderate">
         <IconButton aria-label="Difficulty-Easy">
-          <DoneAllIcon style={{ fontSize: 60 }} className="difficulty" onClick={event=> this.setState({ difficulty: "Moderate" })}/>
+          <DoneAllIcon style={{ fontSize: 60 }} className={this.state.clickedDifficulty2} onClick={event=> {this.setState({ difficulty: "Moderate" }); this.setState({ clickedDifficulty2: 'clickedDifficulty2'}); this.setState({clickedDifficulty3: ''}); this.setState({clickedDifficulty1: ''})}}/>
         </IconButton>
       </Tooltip>
       <Tooltip title="Difficulty-Expert">
         <IconButton aria-label="Difficulty-Expert">
-          <DoneOutlineIcon style={{ fontSize: 60 }} className="difficulty" onClick={event=> this.setState({ difficulty: "Challenging" })}/>
+          <DoneOutlineIcon style={{ fontSize: 60 }} className={this.state.clickedDifficulty3} onClick={event=> {this.setState({ difficulty: "Challenging" }); this.setState({ clickedDifficulty3: 'clickedDifficulty3'}); this.setState({clickedDifficulty2: ''}); this.setState({clickedDifficulty1: ''})}}/>
         </IconButton>
       </Tooltip>
       </div>
@@ -174,9 +208,9 @@ render() {
       </div>
       <br></br>
       <div className="row">
-       <Button type="Submit" variant="outline-secondary" className="save-space-btn">Save Space</Button>
+       <a href='/myspaces'><Button onClick={ event => {this.handleSubmit(event)}} href='/myspaces' variant="outline-secondary" className="save-space-btn">Save Space</Button></a>
        </div>
-      </form>
+      </div>
     </Grid>
     </div>
     )

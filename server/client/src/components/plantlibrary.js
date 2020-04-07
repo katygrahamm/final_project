@@ -10,7 +10,14 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import { IconButton } from '@material-ui/core';
 
 
-class PlantLibrary extends Component {  
+class PlantLibrary extends Component { 
+  constructor(props) {
+    super(props) 
+
+    this.state = {
+      clickedHeart: ''
+    }
+  }  
 
 componentDidMount() {
   let name = 'new user'
@@ -57,8 +64,8 @@ handleImgClick(plantId) {
           <p className="botanical-name-library">{plant.botanical_name}</p>
           <Link to={`/${plant._id}/plantdetail`}><img height="150px" src="" width="auto" alt="plant-image-library" src={plant.image_url} onClick={event => this.handleImgClick(plant._id)}></img></Link>
           <br></br>
-          <IconButton aria-label="Favorite" onClick={event => this.handleAddWishlist(plant._id)}>
-            <FavoriteIcon style={{ fontSize: 20 }} />
+          <IconButton aria-label="Favorite" onClick={event => {this.handleAddWishlist(plant._id)}}>
+            <FavoriteIcon style={{ fontSize: 20 }}/>
           </IconButton>
           <DropdownButton id="dropdown-basic-button" variant="outline-secondary" title="Add to Space">
           {this.props.spaces.map((space) => <Dropdown.Item href="/myspaces" onSelect={event => this.handleOnClick(plant._id, space._id)} >{space.name}</Dropdown.Item>)}

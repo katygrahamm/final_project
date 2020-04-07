@@ -169,13 +169,13 @@ export default function Dashboard() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
+        <Container maxWidth="sm" className={classes.container}>
+ 
             <Grid item xs={12}>
               <Paper className={fixedHeightPaper}>
                 <Recommendations />
               </Paper>
-            </Grid>
+ 
           </Grid>
         </Container>
       </main>

@@ -36,6 +36,8 @@ componentDidMount() {
    console.log(plantid, spaceId, userid)
    this.props.addPlantToSpace(userid, plantid, spaceId)
    this.props.createEvent(userid, plantid, spaceId)
+
+   this.setState({ collection: true })
   }
 
   handleImgClick(plantId) {
@@ -57,7 +59,7 @@ componentDidMount() {
      return(
       <div>Loading ... </div>
      )
-   } else if (this.props.spaces.length == 0) {
+   } else if (this.props.spaces.length == 0) { 
     return (
       <div>
           <div className="row">
@@ -77,6 +79,7 @@ componentDidMount() {
         </div>
       </div>
     )
+
     } else {
     return (
       <div>
@@ -101,7 +104,7 @@ componentDidMount() {
             <hr />
                       
             <div>
-            <h4 className="title-space">Our Recommendations </h4>
+            <h4 className="title-space">Our Recommendations</h4>
             </div>
             <div className="row"> 
               {
@@ -119,12 +122,13 @@ componentDidMount() {
                 </DropdownButton>
                 <hr />
               </div>
+
                   ))
                 }
               </div>
 
             <div>
-            <h4 className="title-space"> {space.name} Plant Collection</h4>
+              <h4 className="title-space">{space.name} Plant Collection</h4>
             </div>
             <div className="row">
               {
@@ -136,12 +140,10 @@ componentDidMount() {
                 <br></br>
                 <hr />
               </div>
+
     
                   ))
                 }
-
-
-                
          
                 </div>
                 </Paper>

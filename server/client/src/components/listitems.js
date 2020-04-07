@@ -23,16 +23,6 @@ import { Tooltip } from '@material-ui/core';
 
 export const mainListItems = (
   <div>
-    <Tooltip title="Create">
-      <Link href="/create" color="inherit">
-        <ListItem button>
-          <ListItemIcon>
-              <AddBoxIcon/>
-            </ListItemIcon>
-          <ListItemText primary="Create" />
-        </ListItem>
-      </Link>
-    </Tooltip>
     <Tooltip title="Spaces">
       <Link href="/myspaces" color="inherit">
         <ListItem button>
@@ -40,16 +30,6 @@ export const mainListItems = (
               <DashboardIcon/>
             </ListItemIcon>
           <ListItemText primary="Spaces" />
-        </ListItem>
-      </Link>
-    </Tooltip>
-    <Tooltip title="Collection">
-        <Link href="/myplants" color="inherit">
-          <ListItem button >
-            <ListItemIcon>
-              <EcoIcon />
-            </ListItemIcon>
-          <ListItemText primary="Collection" />
         </ListItem>
       </Link>
     </Tooltip>

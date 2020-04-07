@@ -57,9 +57,9 @@ export const fetchPlantDetail = (plant) => dispatch => {
   });
 };
 
-export const addUser = (name, userId) => dispatch => {
+export const addUser = (userId) => dispatch => {
 
-  const body = {"name": name, "userId": userId}
+  const body = {"userId": userId}
 
   axios.post(`http://localhost:5000/adduser`, body
 

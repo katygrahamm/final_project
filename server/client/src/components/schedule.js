@@ -27,7 +27,7 @@ import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
 // import { appointments } from "./data";
 
 const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
-const todaysDate = new Date('April 6, 2020 01:15:00') 
+
 
 const getBorder = theme => (`1px solid ${
     theme.palette.type === 'light'
@@ -192,6 +192,9 @@ class Schedule extends Component {
   constructor(props) {
       super(props)
     
+      this.state= {
+        todaysDate: new Date()
+      }
   }
 
   componentDidMount() {
@@ -219,7 +222,7 @@ class Schedule extends Component {
           />
 
           <ViewState
-            defaultCurrentDate={todaysDate}
+            defaultCurrentDate={this.state.todaysDate}
           />
 
           <MonthView

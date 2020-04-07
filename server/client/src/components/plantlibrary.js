@@ -13,7 +13,9 @@ import { IconButton } from '@material-ui/core';
 class PlantLibrary extends Component {  
 
 componentDidMount() {
+  let name = 'new user'
   let userid = localStorage.getItem('userid')
+  this.props.addUser(name, userid)
   this.props.fetchSpaces(userid)
   this.props.fetchPlants()
  }
@@ -50,7 +52,6 @@ handleImgClick(plantId) {
       {
       this.props.plants.plants.map(plant => ( 
         <div className="plant-library-container">
-
           <p className="common-name-library">{plant.common_name}</p>
 
           <p className="botanical-name-library">{plant.botanical_name}</p>
@@ -60,7 +61,7 @@ handleImgClick(plantId) {
             <FavoriteIcon style={{ fontSize: 20 }} />
           </IconButton>
           <DropdownButton id="dropdown-basic-button" variant="outline-secondary" title="Add to Space">
-          {this.props.spaces.map((space) => <Dropdown.Item href="/myplants" onSelect={event => this.handleOnClick(plant._id, space._id)} >{space.name}</Dropdown.Item>)}
+          {this.props.spaces.map((space) => <Dropdown.Item href="/myspaces" onSelect={event => this.handleOnClick(plant._id, space._id)} >{space.name}</Dropdown.Item>)}
           </DropdownButton>
           <hr />
         </div>

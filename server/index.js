@@ -192,7 +192,7 @@ app.post('/:userId/:plantId/createevent', (req, res) => {
             let newEvent = new Event()
               newEvent.title = `Water the ${plant.common_name} in ${space.name}`
               newEvent.priorityId = 2
-              newEvent.startDate = todaysDate.setDate(todaysDate.getDate() + 3);
+              newEvent.startDate = new Date();
               newEvent.endDate = todaysDate.setTime(todaysDate.getTime() + (5*60*1000))
               newEvent.recurrenceRule = 'FREQ=WEEKLY;BYDAY=TU;UNTIL=20230101'
               newEvent.save()
@@ -259,7 +259,6 @@ app.post('/adduser', (req, res) => {
   
   let newUser = new User()
 
-    newUser.name = req.body.name
     newUser.clientId = req.body.userId
     newUser.plant_collection = []
     newUser.wish_list = []

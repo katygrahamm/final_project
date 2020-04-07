@@ -4,7 +4,8 @@ import * as actions from '../actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import _ from "lodash";
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import Link from '@material-ui/core/Link'
 
 
 class LandingPage extends Component {
@@ -17,18 +18,16 @@ class LandingPage extends Component {
 
   }
 
+componentDidMount() {
+  let userId = Math.random().toString(36).substring(7);
 
-handleSubmit(name) {
-  console.log(this.state.name)
-  localStorage.removeItem('userid')
+  localStorage.setItem('userid', userId)
 
-   let userid = Math.random().toString(36).substring(7);
-      console.log("random", userid);
+   this.props.addUser(userId)
+}
 
-    localStorage.setItem('userid', userid)
-    localStorage.setItem('name', name)
+handleSubmit() {
 
-    this.props.addUser(this.state.name, userid)
 }
 
 render() {
@@ -36,14 +35,13 @@ render() {
     <div>
      <h6 className="tell-us text-center">Tell Us Your Name</h6>
      <br></br>
-      <form className="landing-page-form text-center" onSubmit={event => {this.handleSubmit()}}>
-        <input type="text" className="landing-input" onChange={event => {this.setState({ name: event.target.value})}}></input>
+      <form className="landing-page-form text-center" form action="http://localhost:5000/adduser" method="post" onSubmit={event => {this.handleSubmit()}}>
+        <input type="text" className="landing-input"></input>
         <br></br>
         <br></br>
-        <Button type="Submit" className="button-landing" variant="outline-secondary">Submit</Button>
+        <Button type="Submit" href="/myspaces" className="button-landing" variant="outline-secondary">Submit</Button>
         <br></br>
         <br></br>
-        <Link to='/create'>Start Exploring</Link>
       </form>
     </div>
     ) 

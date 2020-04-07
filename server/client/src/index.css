@@ -31,6 +31,13 @@
 
 .common-name-library {
     overflow-wrap: normal;
+    color: #696969;
+    font-size:20px;
+}
+
+.botanical-name-library{
+    color: #696969;
+    font-style: italic;
 }
 
 .plant-image-library {
@@ -45,8 +52,7 @@
 }
 
 .title-space {
-    padding-left: 24px;
-    padding-right: 25px;
+    padding-left: 12px;
     color: #696969;
     margin-bottom: 10px;
 }
@@ -267,3 +273,96 @@
 .plant-image-wishlist{
     margin-bottom: 20px;
 }
+
+.add-link {
+    color:white;
+}
+
+.fab-add { 
+    margin-left: 100px;
+}
+
+.MuiFab-ButtonBase-root {
+    width: 500;
+    position: 'relative';
+    float: right;
+
+}
+
+.space-card{
+    padding: 20px;
+}
+
+.no-space {
+    color: #696969;
+    margin-top: 16px;
+    margin-right: 5px;
+    float: right;
+}
+
+.new-space-2 {
+    padding: 20px;
+}
+
+.icon-add {
+    float:right;
+}
+
+.no-space-title {
+    margin-left: 20px;
+    color: #696969; 
+}
+
+.link {
+  color: #696969; 
+}
+
+.link:hover {
+    color: #696969;
+ }
+
+.water {
+    color: #87CEFA;
+}
+
+.light {
+    color: #FFFF00;
+}
+
+.child {
+    color: #D8BFD8;
+}
+
+.pet{
+    color:#D2B48C;
+}
+
+.room {
+    color: #FA8072;
+}
+
+.height{
+    color: #008080;
+}
+
+.difficulty {
+    color: #3B8932;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }

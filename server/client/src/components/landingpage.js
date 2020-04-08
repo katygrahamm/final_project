@@ -35,7 +35,7 @@ render() {
     <div>
      <h6 className="tell-us text-center">Tell Us Your Name</h6>
      <br></br>
-      <form className="landing-page-form text-center" form action="http://localhost:5000/adduser" method="post" onSubmit={event => {this.handleSubmit()}}>
+      <form className="landing-page-form text-center" onSubmit={event => {this.handleSubmit()}}>
         <input type="text" className="landing-input"></input>
         <br></br>
         <br></br>

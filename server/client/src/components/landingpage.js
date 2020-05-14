@@ -42,6 +42,7 @@ render() {
         <Button type="Submit" href="/myspaces" className="button-landing" variant="outline-secondary">Start Exploring</Button>
         <br></br>
         <br></br>
+        <br></br>
       </form>
     </div>
     ) 

@@ -12,7 +12,7 @@ const Event = require('./models/event')
 const cookieSession = require('cookie-session')
 
 // DB Setup
-mongoose.connect(keys.MONGODB_URI);
+mongoose.connect(keys.MONGODB_SILVER_URI);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

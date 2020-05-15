@@ -19,6 +19,7 @@ import ScheduleDashboard from './components/ScheduleDashboard'
 import SignInPage from './components/SignInPage'
 import WishListDashboard from './components/WishListDashboard'
 
+
 const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
 render(

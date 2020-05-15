@@ -30,7 +30,7 @@ render(
             <Route exact path="/my_spaces" component={MySpacesDashboard} />
             <Route exact path="/my_plants" component={MyPlantsDashboard} />
             <Route exact path='/wish_list' component={WishListDashboard} />
-            <Route exact path="/myplant_library" component={PlantLibraryDashboard} />
+            <Route exact path="/plant_library" component={PlantLibraryDashboard} />
             <Route exact path="/:plantId/plant_detail" component={PlantDetailDashboard} />
             <Route exact path="/schedule" component={ScheduleDashboard} />
           </Switch>

@@ -208,7 +208,7 @@ render() {
       </div>
       <br></br>
       <div className="row">
-       <a href='/myspaces'><Button onClick={ event => {this.handleSubmit(event)}} href='/myspaces' variant="outline-secondary" className="save-space-btn">Save Space</Button></a>
+       <a href='/my_spaces'><Button onClick={ event => {this.handleSubmit(event)}} href='/myspaces' variant="outline-secondary" className="save-space-btn">Save Space</Button></a>
        </div>
       </div>
     </Grid>

@@ -51,7 +51,7 @@ handleImgClick(plantId) {
           <br></br>
           <br></br>
           <DropdownButton id="dropdown-basic-button" variant="outline-secondary" title="Add to Space">
-          {this.props.spaces.map((space) => <Dropdown.Item href="/myspaces" onSelect={event => this.handleOnClick(plant._id, space._id)} >{space.name}</Dropdown.Item>)}
+          {this.props.spaces.map((space) => <Dropdown.Item href="/my_spaces" onSelect={event => this.handleOnClick(plant._id, space._id)} >{space.name}</Dropdown.Item>)}
           </DropdownButton>
           <hr />
         </div>

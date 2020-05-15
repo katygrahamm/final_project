@@ -39,7 +39,7 @@ render() {
         <input type="text" className="landing-input"></input>
         <br></br>
         <br></br>
-        <Button type="Submit" href="/myspaces" className="button-landing" variant="outline-secondary">Start Exploring</Button>
+        <Button type="Submit" href="/my_spaces" className="button-landing" variant="outline-secondary">Start Exploring</Button>
         <br></br>
         <br></br>
         <br></br>

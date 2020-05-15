@@ -217,6 +217,7 @@ render() {
   }
 }
 
+
 function mapStateToProps(state) {
   return ({
     recommendations: state.recommendations,

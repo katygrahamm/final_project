@@ -8,7 +8,7 @@ export const createSpace = (userId, name, water, light, kid_friendly, pet_friend
   
   console.log(body)
 
-  axios.post(`/api/${userId}/createSpace`, body).then(function (response) {
+  axios.post(`/${userId}/createSpace`, body).then(function (response) {
     console.log(response)
     dispatch({ type: ADD_SPACE , payload: response.data });
   })
@@ -18,7 +18,7 @@ export const createSpace = (userId, name, water, light, kid_friendly, pet_friend
 };
 
 export const fetchPlants = () => dispatch => {
-  axios.get(`/api/plantlibrary`
+  axios.get(`/plantlibrary`
   ).then(function (response) {
     console.log('response from fetchplants', response)
     dispatch({ type: FETCH_PLANTS, payload: response.data });
@@ -34,7 +34,7 @@ export const addPlantToSpace = (userId, plantId, spaceId) => dispatch => {
   const body = { 'plantId': plantId, 'spaceId': spaceId }
   console.log(body)
 
-  axios.post(`/api/${userId}/addplanttospace`, body
+  axios.post(`/${userId}/addplanttospace`, body
   ).then(function (response) {
     console.log('response from appPlantToSpace', response)
     dispatch({ type: ADD_PLANTTOSPACE, payload: response.data });
@@ -46,7 +46,7 @@ export const addPlantToSpace = (userId, plantId, spaceId) => dispatch => {
 
 export const fetchPlantDetail = (plant) => dispatch => {
 
-  axios.get(`/api/${plant}/plantdetail`
+  axios.get(`/${plant}/plantdetail`
 
   ).then(function (response) {
     console.log('response from fetchplants', response)
@@ -61,7 +61,7 @@ export const addUser = (userId) => dispatch => {
 
   const body = {"userId": userId}
 
-  axios.post(`/api/adduser`, body
+  axios.post(`/adduser`, body
 
   ).then(function (response) {
     console.log('response from addUser', response)
@@ -77,7 +77,7 @@ export const addCollection = (plant, userId) => dispatch => {
   const body = {'plant': plant, 'userId': userId }
   console.log(body)
 
-  axios.post(`/api/createspace`, body
+  axios.post(`/createspace`, body
   ).then(function (response) {
     console.log('response from addCollection', response)
     dispatch({ type: ADD_COLLECTION, payload: response.data });
@@ -90,7 +90,7 @@ export const addCollection = (plant, userId) => dispatch => {
 
 export const fetchSpaces = (userId) => dispatch => {
 
-  axios.get(`/api/${userId}/userspaces`
+  axios.get(`/${userId}/userspaces`
   ).then(function (response) {
     console.log('response from fetchspaces', response)
     dispatch({ type: FETCH_SPACES , payload: response.data });
@@ -106,7 +106,7 @@ export const createEvent = (userId, plantId, spaceId) => dispatch => {
 
   console.log(body)
 
-  axios.post(`/api/${userId}/${plantId}/createevent`, body
+  axios.post(`/${userId}/${plantId}/createevent`, body
   ).then(function (response) {
     console.log('response from createEvent', response)
     dispatch({ type: ADD_EVENT, payload: response.data });
@@ -118,7 +118,7 @@ export const createEvent = (userId, plantId, spaceId) => dispatch => {
 
 export const fetchEvents = (userId) => dispatch => {
 
-  axios.get(`/api/${userId}/events`
+  axios.get(`/${userId}/events`
   ).then(function (response) {
     console.log('response from fetchEvents', response)
     dispatch({ type: FETCH_EVENTS , payload: response.data });
@@ -133,7 +133,7 @@ export const addWishlist = (plantid, userid) => dispatch => {
   const body = {'plantid': plantid, 'userid': userid }
   console.log(body)
 
-  axios.post(`/api/addwishlist`, body
+  axios.post(`/addwishlist`, body
   ).then(function (response) {
     console.log('response from addCollection', response)
     dispatch({ type: ADD_WISHLIST, payload: response.data });
@@ -145,7 +145,7 @@ export const addWishlist = (plantid, userid) => dispatch => {
 
 export const fetchWishlist = (userId) => dispatch => {
 
-  axios.get(`/api/${userId}/wishlist`
+  axios.get(`/${userId}/wishlist`
   ).then(function (response) {
     console.log('response from fetchEvents', response)
     dispatch({ type: FETCH_WISHLIST , payload: response.data });

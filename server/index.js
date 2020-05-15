@@ -11,12 +11,6 @@ const Space = require('./models/space')
 const Event = require('./models/event')
 const cookieSession = require('cookie-session')
 
-const proxy = require('http-proxy-middleware')
-
-module.exports = function(app) {
-    // add other server routes to path array
-    app.use(proxy(['/api' ], { target: 'http://localhost:5000' }));
-} 
 
 // DB Setup
 mongoose.connect(keys.MONGODB_URI, { useNewUrlParser: true });
@@ -29,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
   // Express will serve up the index.html file
   // if it doesn't recognize the route
   const path = require('path');
-  app.get('*', (req, res) => {
+  app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
@@ -60,7 +54,7 @@ app.get('/logout', (req, res) => {
   res.end()
 });
 
-app.get('/api/current_user', (req, res) => {
+app.get('/current_user', (req, res) => {
   const id = req.user
   User
   .findById(id).exec((error, user) => {
@@ -73,7 +67,7 @@ app.get('/api/current_user', (req, res) => {
   })
 });
 
-app.post('/api/:userId/createspace',  (req, res) => {
+app.post('/:userId/createspace',  (req, res) => {
 
   let userId = req.params.userId
   let roomSize = 0
@@ -134,7 +128,7 @@ app.post('/api/:userId/createspace',  (req, res) => {
   })
   
 
-app.get('/api/plantlibrary', (req, res) => {
+app.get('/plantlibrary', (req, res) => {
     Plant.find({}).exec((err, plants) => {
       if (err) {
         res.send(err)
@@ -145,7 +139,7 @@ app.get('/api/plantlibrary', (req, res) => {
 })
 
 
-app.post('/api/:userId/addplanttospace', (req, res) => {
+app.post('/:userId/addplanttospace', (req, res) => {
 
   const plantId = req.body.plantId
   const userId = req.params.userId
@@ -175,7 +169,7 @@ app.post('/api/:userId/addplanttospace', (req, res) => {
       })
   })
 
-app.post('/api/:userId/:plantId/createevent', (req, res) => {
+app.post('/:userId/:plantId/createevent', (req, res) => {
   const userId = req.params.userId 
   const plantId = req.params.plantId
   const spaceId = req.body.spaceId
@@ -226,7 +220,7 @@ app.post('/api/:userId/:plantId/createevent', (req, res) => {
   })
 })
 
-app.get('/api/:userId/events', (req, res) => {
+app.get('/:userId/events', (req, res) => {
     const userId = req.params.userId
 
     User.find({clientId: userId}).populate({path:'events'}).exec((err, user) => {
@@ -238,7 +232,7 @@ app.get('/api/:userId/events', (req, res) => {
    })
 })
 
-app.get('/api/:userId/userspaces', (req, res) => {
+app.get('/:userId/userspaces', (req, res) => {
     const userId = req.params.userId
 
     User.find({clientId: userId}).populate({path:'spaces', populate: [{path: 'recommended_plants'}, {path: 'plant_collection'}]}).exec((err, user) => {
@@ -250,7 +244,7 @@ app.get('/api/:userId/userspaces', (req, res) => {
   })
 }) 
 
-app.get('/api/:plantId/plantdetail', (req, res) => {
+app.get('/:plantId/plantdetail', (req, res) => {
   const plantId = req.params.plantId
 
   Plant.findById(plantId).exec((err, plant) => {
@@ -262,7 +256,7 @@ app.get('/api/:plantId/plantdetail', (req, res) => {
  })
 })
 
-app.post('/api/adduser', (req, res) => {
+app.post('/adduser', (req, res) => {
   
   let newUser = new User()
 
@@ -280,7 +274,7 @@ app.post('/api/adduser', (req, res) => {
   })
 })
 
-app.post('/api/addwishlist', (req, res) => {
+app.post('/addwishlist', (req, res) => {
 
   let userid = req.body.userid
   let plantid = req.body.plantid
@@ -302,7 +296,7 @@ app.post('/api/addwishlist', (req, res) => {
     })
   })
 
-  app.get('/api/:userId/wishlist', (req, res) => {
+  app.get('/:userId/wishlist', (req, res) => {
 
     const userId = req.params.userId
 

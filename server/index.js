@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(
     cors({
-      origin: 'http://localhost:3000', // allow to server to accept request from different origin
+      origin: '*', // allow to server to accept request from different origin
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
     })

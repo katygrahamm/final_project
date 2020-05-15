@@ -27,11 +27,11 @@ render(
           <Switch>
             <Route exact path="/" component={SignInPage} />
             <Route exact path="/create" component={Dashboard} />
-            <Route exact path="/myspaces" component={MySpacesDashboard} />
-            <Route exact path="/myplants" component={MyPlantsDashboard} />
-            <Route exact path='/wishlist' component={WishListDashboard} />
-            <Route exact path="/plantlibrary" component={PlantLibraryDashboard} />
-            <Route exact path="/:plantId/plantdetail" component={PlantDetailDashboard} />
+            <Route exact path="/my_spaces" component={MySpacesDashboard} />
+            <Route exact path="/my_plants" component={MyPlantsDashboard} />
+            <Route exact path='/wish_list' component={WishListDashboard} />
+            <Route exact path="/myplant_library" component={PlantLibraryDashboard} />
+            <Route exact path="/:plantId/plant_detail" component={PlantDetailDashboard} />
             <Route exact path="/schedule" component={ScheduleDashboard} />
           </Switch>
       </BrowserRouter>

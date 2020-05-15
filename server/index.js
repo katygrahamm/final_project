@@ -12,7 +12,6 @@ const Event = require('./models/event')
 const cookieSession = require('cookie-session')
 
 
-
 // DB Setup
 mongoose.connect(keys.MONGODB_URI, { useNewUrlParser: true });
 

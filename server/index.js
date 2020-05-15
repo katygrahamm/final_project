@@ -12,12 +12,7 @@ const Event = require('./models/event')
 const cookieSession = require('cookie-session')
 
 // DB Setup
-mongoose.connect('mongodb://katy88:katy858@ds121825.mlab.com:11025/yourmongodb', {useNewUrlParser: true});
-mongoose.connection.once('open', function(){
-  console.log('Conection has been made!');
-}).on('error', function(error){
-    console.log('Error is: ', error);
-});
+mongoose.connect(keys.MONGODB_URI);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

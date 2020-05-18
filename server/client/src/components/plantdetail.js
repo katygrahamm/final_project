@@ -28,7 +28,7 @@ class PlantDetail extends Component {
     }
 
 componentDidMount() {
-    let plantId = sessionStorage.getItem('plant')
+    let plantId = localStorage.getItem('plant')
     this.props.fetchPlantDetail(plantId)
  }
 

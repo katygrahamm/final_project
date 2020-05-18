@@ -20,9 +20,7 @@ class PlantLibrary extends Component {
   }  
 
 componentDidMount() {
-  let name = 'new user'
   let userid = localStorage.getItem('userid')
-  this.props.addUser(name, userid)
   this.props.fetchSpaces(userid)
   this.props.fetchPlants()
  }
@@ -39,8 +37,8 @@ componentDidMount() {
  }
 
 handleImgClick(plantId) {
-  sessionStorage.removeItem('plant')
-  sessionStorage.setItem('plant', plantId)
+  localStorage.removeItem('plant')
+  localStorage.setItem('plant', plantId)
 }
 
  render () {
